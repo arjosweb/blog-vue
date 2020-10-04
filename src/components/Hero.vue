@@ -22,7 +22,7 @@
                       <small><i class="bx bx-user mr-2"></i>Por {{ posts[0].user_id.name }} <i class="bx bx-time ml-3 mr-2"></i>{{ posts[0].date }}</small>
                     </p>
                     <p class="pt-2">
-                      <router-link :to="{ name: 'Post' }" class="btn btn-success rounded btn-lg shadow-sm btn_hero px-4 py-2" role="button">
+                      <router-link :to="{ name: 'Post' }" class="btn btn-success rounded btn-lg  shadow-sm btn_hero px-4 py-2" role="button">
                         <span class="btn_hero_text">Leia mais &raquo;</span>
                       </router-link>
                     </p>
@@ -122,6 +122,32 @@ export default {
 }
 .img_hero {
   width: 80%;
+}
+
+.shadow-md-hero {
+
+}
+
+.btn-success {
+
+  color: #fff;
+  border: none;
+  /*background: rgb(68,140,114);*/
+  background: linear-gradient(109deg, rgba(68,140,114,1) 26%, rgba(79,192,141,1) 100%);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.btn-success:hover {
+  color: #fff;
+  border: none;
+  /*background: rgb(68,140,114);*/
+  background: linear-gradient(60deg, rgba(68,140,114,1) 30%, rgba(79,192,141,1) 80%);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s !important;
 }
 
 @media (max-width: 700px) {
