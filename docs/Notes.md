@@ -1,3 +1,19 @@
+- Criar arquivos CSS
+```
+/assets
+    /css
+        /style.css
+        /custom.css
+        /responsive
+```
+
+- Instalar dependências iniciais
+```
+yarn add bootstrap axios jquery popper.js @popperjs/core sass sass-loader bootstrap-vue portal-vue vue-multiselect vue-sweetalert2 @fortawesome/fontawesome-free boxicons --save
+```
+
+- Configurar "main.js"
+```
 // Importar Biblioteca VueJS
 import Vue from "vue"
 // Componente pai da aplicação VueJS
@@ -52,3 +68,11 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app")
+```
+
+- Instalar Webpack (Opcinal)
+```
+npm install --save-dev webpack
+```
+
+- Implementação do Layout
