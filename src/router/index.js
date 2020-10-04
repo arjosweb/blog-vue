@@ -25,6 +25,33 @@ const routes = [
       }
       ]
   },
+  {
+    path: '/admin',
+    component: () => import(/* webpackChunkName: "Admin" */ '../views/Admin.vue'),
+    children: [
+      {
+        path: '',
+        name: 'AdmHome',
+        component: () => import(/* webpackChunkName: "AdmHome" */ '../views/admin/AdmHome.vue')
+      },
+      {
+        path: '/admin/post',
+        name: 'AdmPost',
+        component: () => import(/* webpackChunkName: "AdmPost" */ '../views/admin/AdmPost.vue')
+      },
+      {
+        path: '/admin/users',
+        name: 'Users',
+        component: () => import(/* webpackChunkName: "AdmUsers" */ '../views/admin/AdmUsers.vue')
+      }
+      ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue'),
+  },
+
 
 ]
 

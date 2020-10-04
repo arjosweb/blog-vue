@@ -38,7 +38,7 @@
   </div>
   <div class="row">
     <div class="col-12 pt-2 pb-2 px-md-0">
-      <div v-for="item in posts" :key="item.id" class="card mb-4 mt-2">
+      <div v-for="item in posts" :key="item.id" class="card shadow-sm mb-4 mt-2">
         <router-link v-if="item.slug" class="link_router" :to="/posts/ + item.slug">
           <div class="row no-gutters">
             <div class="col-md-4">

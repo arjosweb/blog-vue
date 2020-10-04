@@ -4,12 +4,12 @@
     <div class="row pt-5">
       <div class="col-12 pt-2 pb-2 px-md-0">
         <h4 class="border-bottom pb-3">
-          <i class="bx bx-news mr-1"></i> Veja todas as postagens abaixo:</h4>
+          <i class="bx bx-news mr-2 icon_features"></i> Veja todas as postagens abaixo:</h4>
       </div>
     </div>
     <div class="row">
       <div class="col-12 pt-2 pb-2 px-md-0">
-        <div v-for="item in posts" :key="item.id" class="card mb-4 mt-2">
+        <div v-for="item in posts" :key="item.id" class="card shadow-sm mb-4 mt-2">
           <router-link v-if="item.slug" class="link_router" :to="/posts/ + item.slug">
             <div class="row no-gutters">
               <div class="col-md-4">
