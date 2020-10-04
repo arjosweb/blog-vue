@@ -103,65 +103,6 @@ export default {
 
 <style>
 
-.carousel-control-prev, .carousel-control-next {
-  width: 20px !important;
-  margin-left: -50px !important;
-  margin-right: -50px !important;
-}
-.carousel-indicators {
-  bottom: -70px;
-  margin-right: 0;
-  margin-left: 0;
-}
-.carousel-indicators li {
-  background-color: #b2b2b2;
-}
-.control_slide {
-  color: #343a40;
-  font-size: 30px;
-}
-.img_hero {
-  width: 80%;
-}
 
-.shadow-md-hero {
-
-}
-
-.btn-success {
-
-  color: #fff;
-  border: none;
-  /*background: rgb(68,140,114);*/
-  background: linear-gradient(109deg, rgba(68,140,114,1) 26%, rgba(79,192,141,1) 100%);
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.btn-success:hover {
-  color: #fff;
-  border: none;
-  /*background: rgb(68,140,114);*/
-  background: linear-gradient(60deg, rgba(68,140,114,1) 30%, rgba(79,192,141,1) 80%);
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s !important;
-}
-
-@media (max-width: 700px) {
-  .reverse_sm {
-    display: flex!important;
-    flex-direction: row-reverse!important;
-  }
-  .hidden {
-    display: none;
-  }
-  .title_hero {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-}
 
 </style>

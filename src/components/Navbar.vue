@@ -26,7 +26,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2 pl-3" style="border-radius: 50px; border: 0;" type="text" placeholder="Procure algo..." aria-label="Search">
+        <input class="search_input form-control mr-sm-2 pl-3" style="border-radius: 50px; border: 0;" type="text" placeholder="Procure algo..." aria-label="Search">
         <button class="btn btn-success rounded-circle" type="submit" style="padding: 0px 8px !important;">
           <i style="font-size: 20px; font-weight: 500; margin-top: 8px;" class="bx bx-search"></i>
         </button>
@@ -70,5 +70,8 @@ name: "Navbar"
   color: #fff;
   text-decoration: none;
   background-color: #61c08d;
+}
+.search_input {
+  font-size: 0.8rem;
 }
 </style>

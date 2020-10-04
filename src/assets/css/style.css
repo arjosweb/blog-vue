@@ -39,8 +39,50 @@
 .rounded-2 {
     border-radius: 10px;
 }
-@media (min-width: 576px) {
-    .jumbotron {
-        padding: 6rem 2rem;
-    }
+
+
+.carousel-control-prev, .carousel-control-next {
+    width: 20px !important;
+    margin-left: -50px !important;
+    margin-right: -50px !important;
+}
+.carousel-indicators {
+    bottom: -70px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.carousel-indicators li {
+    background-color: #b2b2b2;
+}
+.control_slide {
+    color: #343a40;
+    font-size: 30px;
+}
+.img_hero {
+    width: 80%;
+}
+.badge-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-radius: 10px!important;
+}
+.btn-success {
+    color: #fff;
+    border: none;
+    /*background: rgb(68,140,114);*/
+    background: linear-gradient(109deg, rgba(68,140,114,1) 26%, rgba(79,192,141,1) 100%);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.btn-success:hover {
+    color: #fff;
+    border: none;
+    /*background: rgb(68,140,114);*/
+    background: linear-gradient(60deg, rgba(68,140,114,1) 30%, rgba(79,192,141,1) 80%);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s !important;
 }

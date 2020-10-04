@@ -1,6 +1,6 @@
 <template>
   <footer class="container">
-    <hr>
+    <hr class="mt-0">
     <div class="row justify-content-between">
       <div class="col-6">
         <p class="pl-4">&copy; Blog VueJS - 2020</p>
@@ -21,11 +21,14 @@ export default {
 </script>
 
 <style scoped>
+
 footer {
   position: fixed;
   bottom: 0;
   min-width: 100%;
-  background: #fff0;
-  background: linear-gradient(0deg, #fff 70%, #fff0 100%);
+  background: #ffffff;
+  z-index: 9999;
+  /*background: #fff0;*/
+  /*background: linear-gradient(0deg, #fff 70%, #fff0 100%);*/
 }
 </style>

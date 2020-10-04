@@ -1,0 +1,64 @@
+@media (max-width: 700px) {
+    .reverse_sm {
+        display: flex!important;
+        flex-direction: row-reverse!important;
+    }
+    .hidden {
+        display: none;
+    }
+    .title_hero {
+        font-size: 1.8rem;
+        line-height: 2rem;
+        padding-top: 10px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        width: 25px !important;
+        margin-left: -25px !important;
+        margin-right: -25px !important;
+    }
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 15px;
+    }
+    .control_slide {
+        color: #343a40;
+        font-size: 20px;
+    }
+    .jumbotron {
+        padding: 1.6rem 1rem 6rem 1rem;
+        margin-bottom: 0;
+        background-color: #e9ecef;
+        border-radius: 0;
+    }
+    .cards_home {
+        margin: 30px;
+    }
+    .card {
+        margin-top: 0;
+        margin-bottom: 0;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #bbc0c475;
+        border-radius: 10px;
+        transition: all 0.4s;
+    }
+    .card:hover {
+        /*margin-top: -10px!important;
+        margin-bottom: 10px!important;*/
+        transition: all 0.4s;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 6rem 2rem;
+    }
+}

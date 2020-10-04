@@ -1,25 +1,24 @@
 <template>
-<section>
-  <!--Navbar-->
-  <Navbar/>
-  <!--Navbar-->
-  <!--Container-->
-  <main role="main">
-    <!--Hero-->
-    <Hero/>
-    <!--Hero-->
-    <div class="container">
-      <!-- Content -->
-      <transition name="view">
-        <router-view></router-view>
-      </transition>
-      <!-- Content -->
-    </div>
-  </main>
-  <!--Container-->
-  <Footer/>
-</section>
-
+  <section>
+    <!--Navbar-->
+    <Navbar/>
+    <!--Navbar-->
+    <!--Container-->
+    <main role="main">
+      <!--Hero-->
+      <Hero/>
+      <!--Hero-->
+      <div class="container">
+        <!-- Content -->
+        <transition name="view">
+          <router-view></router-view>
+        </transition>
+        <!-- Content -->
+      </div>
+    </main>
+    <!--Container-->
+    <Footer/>
+  </section>
 </template>
 
 <script>
