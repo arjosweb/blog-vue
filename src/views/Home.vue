@@ -1,52 +1,61 @@
 <template>
 <div class="pb-5 mb-5">
+  <!--CARDS - HORIZONTAL-->
   <div class="row">
     <div class="col-12 pt-3 pb-2 px-md-0 pt-sm-4">
-      <h4><i class="bx bxs-hot mr-2 icon_features"></i> <span>Destaques da semana</span></h4>
+      <h4><i class="bx bxs-hot mr-2 icon_features"></i> <span>Destaques da Semana</span></h4>
     </div>
   </div>
   <div class="row">
     <div class="card-deck  pt-4 pb-3">
       <div v-for="item in posts" :key="item.id" class="col-md-4 pb-sm-3 p-0 m-0">
-        <div class="card mb-4 cards_home shadow-sm">
-          <img :src="item.image" class="card-img-top" alt="">
-          <div class="card-body">
-            <small><i class="bx bx-user mr-2"></i>Por {{ posts[1].user_id.name }} <i class="bx bx-calendar ml-3 mr-2"></i>{{ posts[1].date }}</small>
-            <h5 class="card-title pt-2">{{ item.title | truncate(50)  }}</h5>
-            <p class="card-text text-justify">{{ item.text  | truncate(100) }}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[0].category_id.name }}</small>
-            <small class="text-muted"><i class="bx bx-time ml-md-3 mr-2"></i>Last updated 3 mins ago</small>
-          </div>
-        </div>
+          <router-link v-if="item.slug" class="link_router" :to="/posts/ + item.slug">
+            <div class="card mb-4 cards_home shadow-sm">
+                <img v-if="item.image" :src="item.image" class="card-img-top" alt="">
+                <div class="card-body">
+                  <small>
+                    <i class="bx bx-user mr-2" v-if="item.user_id.name"></i>Por {{ item.user_id.name }}
+                    <i class="bx bx-calendar ml-3 mr-2" v-if="item.date"></i>{{ item.date }}
+                  </small>
+                  <h5 class="card-title pt-2" v-if="item.title">{{ item.title | truncate(50)  }}</h5>
+                  <p class="card-text text-justify" v-if="item.text">{{ item.text  | truncate(100) }}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted" v-if="item.category_id.name"><i class="bx bx-purchase-tag mr-1"></i> {{ item.category_id.name }}</small>
+                  <small class="text-muted"><i class="bx bx-time ml-md-3 mr-2"></i>Last updated 3 mins ago</small>
+                </div>
+            </div>
+          </router-link>
       </div>
     </div>
   </div>
+  <!--CARDS - VERTICAL-->
   <div class="row">
     <div class="col-12 pt-2 pb-2 px-md-0">
       <h4 class="border-bottom pb-3">
-        <i class="bx bx-news mr-1"></i> Últimas notícias</h4>
+        <i class="bx bx-news mr-1"></i> Últimas Notícias</h4>
     </div>
   </div>
   <div class="row">
     <div class="col-12 pt-2 pb-2 px-md-0">
       <div v-for="item in posts" :key="item.id" class="card mb-4 mt-2">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img :src="item.image" class="card-img img_lasts" alt="">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{ item.title | truncate(100)  }}</h5>
-              <p class="card-text">{{ item.text  | truncate(300) }}</p>
-              <p class="card-text">
-                <small class="text-muted"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[0].category_id.name }}</small>
-                <small class="text-muted"><i class="bx bx-time ml-md-3 mr-2"></i>Last updated 3 mins ago</small>
-              </p>
+        <router-link v-if="item.slug" class="link_router" :to="/posts/ + item.slug">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img v-if="item.image" :src="item.image" class="card-img img_lasts" alt="">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title" v-if="item.title">{{ item.title | truncate(100)  }}</h5>
+                <p class="card-text" v-if="item.text">{{ item.text  | truncate(300) }}</p>
+                <p class="card-text">
+                  <small class="text-muted" v-if="item.category_id.name"><i class="bx bx-purchase-tag mr-1"></i> {{ item.category_id.name }}</small>
+                  <small class="text-muted" ><i class="bx bx-time ml-md-3 mr-2"></i>Last updated 3 mins ago</small>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -74,6 +83,13 @@ export default {
 }
 </script>
 <style scoped>
+.link_router {
+  color: #212529;
+}
+.link_router:hover {
+  color: #464647;
+  text-decoration: none;
+}
 .card-img, .card-img-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

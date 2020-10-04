@@ -37,8 +37,7 @@ export default {
     },
     methods: {
         async loadResources() {
-            // await this.$store.dispatch("getClients")
-            // await this.$store.dispatch("getProviders")
+          // await this.$store.dispatch("getPosts")
         },
     }
 }

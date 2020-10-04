@@ -13,8 +13,8 @@
         <li class="nav-item pr-md-3" :class="{'active' : this.$route.name === 'Home'}">
           <router-link :to="{ name: 'Home' }" class="nav-link">Início</router-link>
         </li>
-        <li class="nav-item pr-md-3" :class="{'active' : this.$route.name === 'Post'}">
-          <router-link :to="{ name: 'Post' }" class="nav-link">Posts</router-link>
+        <li class="nav-item pr-md-3" :class="{'active' : this.$route.name === 'Posts'}">
+          <router-link :to="{ name: 'Posts' }" class="nav-link">Posts</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
@@ -31,18 +31,51 @@
           <i style="font-size: 20px; font-weight: 500; margin-top: 8px;" class="bx bx-search"></i>
         </button>
       </form>
-      <div class="my-2 ml-2 my-lg-0">
-        <button class="btn btn-success rounded-circle" type="submit" style="padding: 0px 8px !important;">
+      <div data-toggle="modal" data-target="#modalLogin" class="my-2 ml-2 my-lg-0">
+        <button data-toggle="modal" data-target="#modalLogin" class="btn btn-success rounded-circle" style="padding: 0px 8px !important;">
           <i style="font-size: 20px; font-weight: 500; margin-top: 8px;" class="bx bx-user"></i>
         </button>
       </div>
     </div>
+    <!--Modals-->
+    <ModalDefault icon="bx-buildings"
+                  id_modal="#modalLogin"
+                  title="Entrar"
+                  size="modal-md"
+         >
+      <div slot="body">
+        <div class="p-3">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="provider_company">Email:</label>
+                <input  type="text" id="provider_company" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="provider_name">Password:</label>
+                <input type="password" id="provider_name" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ModalDefault>
   </nav>
 </template>
 
 <script>
+import $ from "bootstrap";
+import ModalDefault from "@/components/commun/ModalDefault";
 export default {
-name: "Navbar"
+name: "Navbar",
+  components: {ModalDefault},
+  methods: {
+    login() {
+      $('#modalLogin').modal('show')
+    }
+  }
 }
 </script>
 

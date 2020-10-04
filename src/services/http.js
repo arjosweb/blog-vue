@@ -2,7 +2,8 @@ import axios from "axios";
 
 const USER_TOKEN = window.localStorage.getItem("access_token")
 const AuthStr = `Bearer ${USER_TOKEN}`;
-const baseUrl = 'api/';
+// const baseUrl = 'api/';
+const baseUrl = 'http://127.0.0.1:8000/api/';
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,

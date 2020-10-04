@@ -12,24 +12,27 @@
               <div class="carousel-item active">
                 <div class="row reverse_sm">
                   <div class="col-md-6 col-sm-12 align-self-center pt-2 pb-3 d-md-none">
-                    <img :src="posts[0].image" width="100%" class="shadow rounded-2 p-0">
+                    <img v-if="posts[0].image" :src="posts[0].image" width="100%" class="shadow rounded-2 p-0">
                   </div>
                   <div class="col-md-6 col-sm-12 pr-md-2">
-                    <b-badge class=""><small class="px-1"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[0].category_id.name }}</small></b-badge>
-                    <h1 class="display-5 mt-sm-4 title_hero">{{ posts[0].title | truncate(70) }}</h1>
-                    <p class="pt-2 text-justify">{{ posts[0].text | truncate(180) }}</p>
+                    <b-badge v-if="posts[0].category_id.name" class=""><small class="px-1"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[0].category_id.name }}</small></b-badge>
+                    <h1 v-if="posts[0].title" class="display-5 mt-sm-4 title_hero">{{ posts[0].title | truncate(70) }}</h1>
+                    <p v-if="posts[0].text" class="pt-2 text-justify">{{ posts[0].text | truncate(180) }}</p>
                     <p class=" text-justify">
-                      <small><i class="bx bx-user mr-2"></i>Por {{ posts[0].user_id.name }} <i class="bx bx-time ml-3 mr-2"></i>{{ posts[0].date }}</small>
+                      <small>
+                        <i class="bx bx-user mr-2" v-if="posts[0].user_id.nam"></i>Por {{ posts[0].user_id.name }}
+                        <i class="bx bx-time ml-3 mr-2" v-if="posts[0].date"></i>{{ posts[0].date }}
+                      </small>
                     </p>
                     <p class="pt-2">
-                      <router-link :to="{ name: 'Post' }" class="btn btn-success rounded btn-lg  shadow-sm btn_hero px-4 py-2" role="button">
+                      <router-link v-if="posts[0].slug" :to="/posts/ + posts[0].slug" class="btn btn-success rounded btn-lg  shadow-sm btn_hero px-4 py-2" role="button">
                         <span class="btn_hero_text">Leia mais &raquo;</span>
                       </router-link>
                     </p>
                   </div>
                   <div class="col-md-6 col-sm-12 align-self-center text-right hidden">
                     <div class="p-2 pr-3">
-                      <img :src="posts[0].image" class="img_hero shadow rounded-2 p-0 mb-1">
+                      <img v-if="posts[0].image" :src="posts[0].image" class="img_hero shadow rounded-2 p-0 mb-1">
                     </div>
                   </div>
                 </div>
@@ -37,24 +40,27 @@
               <div class="carousel-item">
                 <div class="row reverse_sm">
                   <div class="col-md-6 col-sm-12 align-self-center pt-2 pb-3 d-md-none">
-                    <img :src="posts[1].image" width="100%" class="shadow rounded-2 p-0">
+                    <img v-if="posts[1].image" :src="posts[1].image" width="100%" class="shadow rounded-2 p-0">
                   </div>
                   <div class="col-md-6 col-sm-12 pr-md-2">
-                    <b-badge class=""><small class="px-1"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[1].category_id.name }}</small></b-badge>
-                    <h1 class="display-5 mt-sm-4 title_hero">{{ posts[1].title | truncate(70) }}</h1>
-                    <p class="pt-2 text-justify">{{ posts[1].text | truncate(180) }}</p>
+                    <b-badge v-if="posts[1].category_id.name" class=""><small class="px-1"><i class="bx bx-purchase-tag mr-1"></i> {{ posts[1].category_id.name }}</small></b-badge>
+                    <h1 v-if="posts[1].title" class="display-5 mt-sm-4 title_hero">{{ posts[1].title | truncate(70) }}</h1>
+                    <p v-if="posts[1].text" class="pt-2 text-justify">{{ posts[1].text | truncate(180) }}</p>
                     <p class=" text-justify">
-                      <small><i class="bx bx-user mr-2"></i>Por {{ posts[1].user_id.name }} <i class="bx bx-time ml-3 mr-2"></i>{{ posts[1].date }}</small>
+                      <small>
+                        <i class="bx bx-user mr-2" v-if="posts[1].user_id.name"></i>Por {{ posts[1].user_id.name }}
+                        <i class="bx bx-time ml-3 mr-2" v-if="posts[1].date"></i>{{ posts[1].date }}
+                      </small>
                     </p>
                     <p class="pt-2">
-                      <router-link :to="{ name: 'Post' }" class="btn btn-success rounded btn-lg shadow-sm btn_hero px-4 py-2" role="button">
+                      <router-link v-if="posts[1].slug" :to="/posts/ + posts[1].slug" class="btn btn-success rounded btn-lg shadow-sm btn_hero px-4 py-2" role="button">
                         <span class="btn_hero_text">Leia mais &raquo;</span>
                       </router-link>
                     </p>
                   </div>
                   <div class="col-md-6 col-sm-12 align-self-center text-right hidden">
                     <div class="p-2 pr-3">
-                      <img :src="posts[1].image" class="img_hero shadow rounded-2 p-0 mb-1">
+                      <img v-if="posts[1].image" :src="posts[1].image" class="img_hero shadow rounded-2 p-0 mb-1">
                     </div>
                   </div>
                 </div>

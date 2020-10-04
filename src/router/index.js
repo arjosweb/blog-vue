@@ -6,7 +6,6 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '',
-    name: 'Layout',
     component: () => import(/* webpackChunkName: "Layout" */ '../views/Layout.vue'),
     children: [
       {
@@ -16,6 +15,11 @@ const routes = [
       },
       {
         path: '/posts',
+        name: 'Posts',
+        component: () => import(/* webpackChunkName: "Posts" */ '../views/Posts.vue')
+      },
+      {
+        path: '/posts/:slug',
         name: 'Post',
         component: () => import(/* webpackChunkName: "Post" */ '../views/Post.vue')
       }
