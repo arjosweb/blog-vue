@@ -22,8 +22,18 @@ const routes = [
         path: '/posts/:slug',
         name: 'Post',
         component: () => import(/* webpackChunkName: "Post" */ '../views/Post.vue')
-      }
-      ]
+      },
+      {
+        path: '/tests',
+        name: 'Tests',
+        component: () => import(/* webpackChunkName: "Tests" */ '../views/Tests.vue')
+      },
+      {
+        path: '/tests/:slug',
+        name: 'Test',
+        component: () => import(/* webpackChunkName: "Test" */ '../views/Test.vue')
+      },
+    ]
   },
   {
     path: '/admin',
@@ -51,8 +61,11 @@ const routes = [
     name: 'Login',
     component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue'),
   },
-
-
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "NotFound" */ '../views/NotFound.vue'),
+  },
 ]
 
 const router = new VueRouter({

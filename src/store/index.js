@@ -7,7 +7,12 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     post_edit: {},
-    // posts: []
+    // posts: [],
+    test: {
+      // user: {},
+      // category: {}
+    },
+    tests: [],
     posts: [
       {
         id: 1,
@@ -63,13 +68,29 @@ export default new Vuex.Store({
     SET_POST(state, context) {
       state.post = context;
     },
+    SET_TESTS(state, context) {
+      state.tests = context;
+    },
+    SET_TEST(state, context) {
+      state.test = context;
+    },
   },
   actions: {
-    /* CLIENTS */
-    /*** List all clients ***/
-    getPosts(context) {
+    /* TESTS - POSTS */
+    /*** List all tests ***/
+    getTests(context) {
       api.get(`posts`).then(response => {
-        context.commit("SET_POSTS", response.data)
+        context.commit("SET_TESTS", response.data)
+      }).catch(error => {
+        console.log(error);
+      }).finally(() => {
+      });
+    },
+
+    /*** Show test ***/
+    getTest(context, id) {
+      api.get(`posts/${id}`).then(response => {
+        context.commit("SET_TEST", response.data)
       }).catch(error => {
         console.log(error);
       }).finally(() => {

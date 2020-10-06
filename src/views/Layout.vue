@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         async loadResources() {
-          // await this.$store.dispatch("getPosts")
+          await this.$store.dispatch("getTests")
         },
     }
 }

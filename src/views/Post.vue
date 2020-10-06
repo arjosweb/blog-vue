@@ -5,13 +5,11 @@
         <div class="row d-block pb-4 text-center">
           <h1 v-if="post.title" class="display-6">{{ post.title }}</h1>
           <span v-if="post.subtitle" class="text-muted text-justify">{{ post.subtitle }} </span>
-
           <small class="d-block pt-3">
             <i v-if="post.user_id.name" class="bx bx-user mr-2"></i>Por {{ post.user_id.name }}
             <i v-if="post.date" class="bx bx-calendar ml-3 mr-2"></i>{{ post.date }}
             <i v-if="post.category_id.name" class="bx bx-purchase-tag ml-3 mr-1"></i> {{ post.category_id.name }}
           </small>
-
           <img v-if="post.image" class="post_features mt-5 shadow rounded-2" :src="post.image" alt="">
         </div>
         <div class="row text-justify pt-3 pb-3 mb-5">
@@ -22,10 +20,8 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
 </template>
 
 <script>
@@ -42,6 +38,7 @@ export default {
   },
   created() {
     this.post = this.findBySlug(this.$route.params.slug)
+    this.iniPage(this.post)
   },
   methods: {
     findBySlug(slug) {
@@ -49,8 +46,17 @@ export default {
       {
         if (slug === this.posts[i].slug) return this.posts[i];
       }
-      return null;
-    }
+    },
+    iniPage(payload){
+      /*this.$store.dispatch('getTest', payload);*/
+      setTimeout( () => {
+        if (payload === undefined) {
+          this.$router.push({name: 'NotFound'})
+        } else {
+          return null
+        }
+      }, 200);
+    },
   }
 }
 </script>
