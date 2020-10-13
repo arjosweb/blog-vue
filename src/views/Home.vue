@@ -3,7 +3,10 @@
   <!--CARDS - HORIZONTAL-->
   <div class="row">
     <div class="col-12 pt-3 pb-2 px-md-0 pt-sm-4">
-      <h4><i class="bx bxs-hot mr-2 icon_features"></i> <span>Destaques da Semana</span></h4>
+      <h4>
+        <i class="bx bxs-hot mr-2 icon_features"></i>
+        <span>Destaques da Semana</span>
+      </h4>
     </div>
   </div>
   <div class="row">
@@ -66,8 +69,6 @@
 import { mapState } from "vuex";
 export default {
   name: 'Home',
-  components: {
-  },
   computed: {
     ...mapState(['posts'])
   },
@@ -76,7 +77,6 @@ export default {
       if (value.length > limit) {
         value = value.substring(0, (limit - 3)) + '...';
       }
-
       return value
     },
   }
