@@ -5,6 +5,8 @@
 
 Project developed for the purpose of studying the Vue.JS framework, in addition to Bootstrap.
 
+<img alt="Preview" height="500px" width="auto" src="https://i.imgur.com/0gfuSQH.gif" />
+
 ---
 
 ## ✅ Requirements
