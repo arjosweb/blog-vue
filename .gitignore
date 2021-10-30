@@ -3,6 +3,7 @@ node_modules
 /dist
 docs
 docs/*
+/docs/
 
 
 # local env files
